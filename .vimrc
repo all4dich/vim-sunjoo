@@ -134,9 +134,6 @@ let g:tagbar_type_go = {
 \ }
 " }}}
 
-" NeoComplete
-" let g:neocomplete#enable_at_startup = 1
-
 set ai
 set cursorline
 
