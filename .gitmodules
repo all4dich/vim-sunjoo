@@ -1,0 +1,18 @@
+[submodule "bundle/Jenkinsfile-vim-syntax"]
+	path = bundle/Jenkinsfile-vim-syntax
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule "bundle/neocomplete"]
+	path = bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "bundle/vim-bazel"]
+	path = bundle/vim-bazel
+	url = https://github.com/davidzchen/vim-bazel.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://all4dich@github.com/fatih/vim-go.git
+[submodule "bundle/vim-pug"]
+	path = bundle/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git

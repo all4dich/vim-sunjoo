@@ -1,0 +1,13 @@
+bundle/Jenkinsfile-vim-syntax : https://github.com/martinda/Jenkinsfile-vim-syntax.git
+bundle/neocomplete : https://github.com/Shougo/neocomplete.vim.git
+bundle/vim-airline : https://github.com/vim-airline/vim-airline
+bundle/vim-bazel : https://github.com/davidzchen/vim-bazel.gitt s
+bundle/vim-go : https://all4dich@github.com/fatih/vim-go.git
+bundle/vim-pug : https://github.com/digitaltoad/vim-pug.git
+bundle/tagbar
+bundle/fugitive
+bundle/vim-webostv-dev/plugin/vim-webostv-dev.vim
+plugin/NERD_tree.vim
+plugin/taglist.vim
+nerdtree_plugin/exec_menuitem.vim
+nerdtree_plugin/fs_menu.vim
