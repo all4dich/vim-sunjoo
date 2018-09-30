@@ -22,3 +22,6 @@
 [submodule "bundle/nvim-yarp"]
 	path = bundle/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp.git
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
