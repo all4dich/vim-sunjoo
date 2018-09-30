@@ -143,3 +143,6 @@ let g:airline#extensions#tabline#fnamemod = ':.:t'
 "" Show buffer number in list
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+"""
+let g:deoplete#enable_at_startup = 1
+set pyxversion=3
