@@ -22,14 +22,18 @@ if !isdirectory(gitdir)
   echom(system(temp_cmd))
 else
   let commit_msg_file = gitdir . "/hooks/commit-msg"
+  let get_url_cmd = "git remote -v|grep \\(push\\)$|awk '{print $2}' | tr -d '\n'"
+  let remote_push_url = system(get_url_cmd)
   if filereadable(commit_msg_file)
     let msg = "echo \"$(date | tr -d '\n') INFO: " . commit_msg_file . " file exists\" >> ${HOME}/.vim/log"
     echom(system(msg))
+  elseif remote_push_url =~# ".*wall\.lge\.com.*"
+    let get_hook_cmd = "scp -p -P 29448 wall.lge.com:hooks/commit-msg " . gitdir . "/hooks/"
+    let r = system(get_hook_cmd)
+    echom curr_date . " INFO: Download " . commit_msg_file . ": Complete"
   else
-    " let get_hook_cmd = "scp -p -P 29448 wall.lge.com:hooks/commit-msg " . gitdir . "/hooks/"
-    " let r = system(get_hook_cmd)
-    " echom curr_date . " INFO: Download " . commit_msg_file . ": Complete"
-    let r = 1
+    let msg = "echo \"$(date | tr -d '\n') INFO: This repository " . remote_push_url . " is not on wall.lge.com\" >> ${HOME}/.vim/log"
+    echom(system(msg))
   endif
 endif
 " }}}
