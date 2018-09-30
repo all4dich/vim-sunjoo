@@ -13,3 +13,4 @@
 * vim-hug-neovim-rpc - https://github.com/roxma/vim-hug-neovim-rpc.git
 * vim-pug - https://github.com/digitaltoad/vim-pug.git
 * vim-webostv-dev
+* vim-node - https://github.com/moll/vim-node.git
