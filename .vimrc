@@ -28,7 +28,14 @@ inoremap  ,t <esc>:NERDTree<CR>
 nnoremap  ,t :NERDTree<CR>
 " Replace or Add some actions 
 
-" Tab actions
+" autocmd FileType Action {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType python setlocal foldmethod=indent
+augroup END
+" }}}
+
+" Tab actions {{{
 if has("gui_macvim")
   " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
   " the right side. Ctrl-Shift-Tab goes the other way.
@@ -53,6 +60,7 @@ if has("gui_macvim")
   " Command-0 goes to the last tab
   noremap <D-0> :tablast<CR>
 endif
+" }}}
 
 " Set another shortcuts
 " Insert Date string. After doing it, move to a next line and insert '-' list
