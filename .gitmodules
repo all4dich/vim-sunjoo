@@ -28,3 +28,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/vim-webostv-dev"]
+	path = bundle/vim-webostv-dev
+	url = https://github.com/cerberus-tools/vim-webostv-dev.git
