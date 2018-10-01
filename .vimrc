@@ -144,16 +144,17 @@ let g:airline#extensions#tabline#fnamemod = ':.:t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 set pyxversion=3
 " jedi-vim Configuration {{{
-let g:jedi#use_tabs_not_buffers = 0
+" let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 1
 let g:jedi#completions_enabled = 1
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>a"
-let g:jedi#goto_definitions_command = ""
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#rename_command = "<leader>r"
+let g:jedi#completions_command = "<leader>c"
+" let g:jedi#goto_command = "<leader>d"
+" let g:jedi#goto_assignments_command = "<leader>a"
+" let g:jedi#goto_definitions_command = ""
+" let g:jedi#documentation_command = "K"
+" let g:jedi#usages_command = "<leader>u"
+" let g:jedi#rename_command = "<leader>r"
 " }}}
