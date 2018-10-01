@@ -1,5 +1,22 @@
 # Vim configuration for sunjoo
 
+## Install
+* Clone this repository  as ${HOME}/.vim
+* Copy .vimrc into ${HOME}
+```bash
+cp ${HOME}/.vim/.vimrc ~/
+```
+* Move to ${HOME}/.vim and update all submodules
+```bash
+$> cd ~/.vim
+$> git submodule update --init --recursive
+```
+* Install YouCompleteMe plugin
+```bash
+$> cd ~/.vim/bundle/YouCompleteMe/
+$> ./install.py --clang-completer --go-completer
+```
+
 ## Plugins
 * Airline - https://github.com/vim-airline/vim-airline
 * Jenkinsfile-vim-syntax - https://github.com/martinda/Jenkinsfile-vim-syntax
