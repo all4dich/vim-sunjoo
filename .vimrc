@@ -166,3 +166,9 @@ let g:jedi#completions_command = "<leader>c"
 " let g:jedi#usages_command = "<leader>u"
 " let g:jedi#rename_command = "<leader>r"
 " }}}
+
+" YouCompleMe Configurations {{{
+let g:ycm_key_invoke_completion = '<C-K>'
+let g:ycm_confirm_extra_conf = 0
+" let g:syntastic_java_checkers = []
+" }}}
