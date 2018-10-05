@@ -175,45 +175,6 @@ let g:ycm_confirm_extra_conf = 0
 " let g:syntastic_java_checkers = []
 " }}}
 
-fun! CompleteMonths(findstart, base)
-  if a:findstart
-	  " locate the start of the word
-	  let line = getline('.')
-	  let start = col('.') - 1
-	  while start > 0 && line[start - 1] =~ '\a'
-	    let start -= 1
-	  endwhile
-	  return start
-  else
-	  " find months matching with "a:base"
-    let get_project_names_cmd = "ssh wall.lge.com gerrit ls-projects  -m " . @" . " > ${HOME}/repo_list.txt"
-    " let get_project_names_cmd = "ssh wall.lge.com gerrit ls-projects  -m webos-pro/ > ${HOME}/repo_list.txt"
-    let r = system(get_project_names_cmd)
-	  " ret r = 'starfish/build-starfish webos-pro/meta-lg-webos'
-    let hom_dir = system("echo $HOME|tr -d '\n'")
-    let r = readfile(hom_dir . '/repo_list.txt')
-    " echom r[100]
-    let prj_list = []
-    let c = 1
-    "while c <= 10
-    "  call add(prj_list, r[c])
-    "  let c += 1
-    "endwhile
-	  for m in r
-	    if m =~ '^' . a:base
-		    call complete_add(m)
-	    endif
-	    sleep 300m	" simulate searching for next match
-	    if complete_check()
-		    break
-	    endif
-	  endfor
-	  return []
-  endif
-endfun
-inoremap <leader>branch <esc>viwy:set completefunc=CompleteMonths<CR>Di<C-X><C-U>
-nnoremap <leader>branch :set completefunc=CompleteMonths<CR>i<C-X><C-U>
-
 com! -complete=custom,ListUserstwo -nargs=1 Sunjoo2 call Varg("<args>")
 fun! ListUserstwo(A,L,P)
 	return "starfish/build-starfish\nwebos-pro/meta-lg-webos"
