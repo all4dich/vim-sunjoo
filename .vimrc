@@ -67,9 +67,11 @@ endif
 " prefix
 nnoremap <F6> o<esc>^i<C-R>=strftime("%F")<CR><esc>o<C-R>=strftime("    * ")<CR>
 inoremap <F6> <esc>o<esc>^i<C-R>=strftime("%F")<CR><esc>o<C-R>=strftime("    * ")<CR>
-" Insert just a next line with 'dash' character
+" Insert just a next line with '*' character
 inoremap <F7> <esc>o<esc>^i<C-R>=strftime("    * ")<CR>
-
+" Set foldmethod as 'indent'
+nnoremap <leader>fi :setlocal foldmethod=indent<CR>
+inoremap <leader>fi <esc>:setlocal foldmethod=indent<CR>
 
 " Set Pathogen Enable {{{
 call pathogen#infect()
@@ -172,3 +174,8 @@ let g:ycm_key_invoke_completion = '<C-K>'
 let g:ycm_confirm_extra_conf = 0
 " let g:syntastic_java_checkers = []
 " }}}
+
+com! -complete=custom,ListUserstwo -nargs=1 Sunjoo2 call Varg("<args>")
+fun! ListUserstwo(A,L,P)
+	return "starfish/build-starfish\nwebos-pro/meta-lg-webos"
+endfun
