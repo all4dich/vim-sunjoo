@@ -34,3 +34,6 @@
 [submodule "bundle/vim-gutentags"]
 	path = bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "bundle/gutentags_plug"]
+	path = bundle/gutentags_plug
+	url = https://github.com/skywind3000/gutentags_plus
