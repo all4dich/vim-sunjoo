@@ -31,3 +31,9 @@
 [submodule "bundle/vim-webostv-dev"]
 	path = bundle/vim-webostv-dev
 	url = https://github.com/cerberus-tools/vim-webostv-dev.git
+[submodule "bundle/vim-gutentags"]
+	path = bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "bundle/gutentags_plug"]
+	path = bundle/gutentags_plug
+	url = https://github.com/skywind3000/gutentags_plus
