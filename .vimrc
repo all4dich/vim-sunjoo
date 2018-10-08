@@ -26,7 +26,7 @@ inoremap jk <esc>
 "" Open NERDTree
 inoremap  ,t <esc>:NERDTree<CR>
 nnoremap  ,t :NERDTree<CR>
-" Replace or Add some actions 
+" Add or Replace some actions
 
 " autocmd FileType Action {{{
 augroup filetype_vim
@@ -35,7 +35,7 @@ augroup filetype_vim
 augroup END
 " }}}
 
-" Tab actions {{{
+" Tab Window actions {{{
 if has("gui_macvim")
   " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
   " the right side. Ctrl-Shift-Tab goes the other way.
@@ -60,6 +60,20 @@ if has("gui_macvim")
   " Command-0 goes to the last tab
   noremap <D-0> :tablast<CR>
 endif
+" }}}
+
+" {{{ Tab Key Action
+" CleverTab:
+"   - Insert a <Tab> if the current line is currently only whitespace
+"   - Or Start/Continue a CTRL-N completion
+function! CleverTab()
+   if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+      return "\<Tab>"
+   else
+      return "\<C-N>"
+   endif
+endfunction
+inoremap <Tab> <C-R>=CleverTab()<CR>
 " }}}
 
 " Set another shortcuts
@@ -174,7 +188,6 @@ let g:ycm_key_invoke_completion = '<C-K>'
 let g:ycm_confirm_extra_conf = 0
 " let g:syntastic_java_checkers = []
 " }}}
-
 com! -complete=custom,ListUserstwo -nargs=1 Sunjoo2 call Varg("<args>")
 fun! ListUserstwo(A,L,P)
 	return "starfish/build-starfish\nwebos-pro/meta-lg-webos"
