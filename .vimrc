@@ -18,6 +18,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 noremap <leader>,b :buffer  
 "" Delete a current buffer
 noremap <leader>,qb :bdelete<CR>
+"" Go to a next buffer
+noremap <S-Tab> :bnext<CR>
 " Buffer Shortcuts - End
 
 " Add or Replace some actions 
@@ -35,8 +37,11 @@ augroup filetype_vim
 augroup END
 " }}}
 
+colorscheme solarized
+
 " Tab Window actions {{{
 if has("gui_macvim")
+  colorscheme darkBlue
   " Press Ctrl-Tab to switch between open tabs (like browser tabs) to
   " the right side. Ctrl-Shift-Tab goes the other way.
   noremap <C-Tab> :tabnext<CR>
@@ -113,7 +118,6 @@ fun! Dos2unixFunction()
 endfun
 com! Dos2Unix keepjumps call Dos2unixFunction()
 
-colorscheme desert
 set number  
 " GO Lang plugin configurations {{{
 " Highlight
@@ -164,6 +168,7 @@ set cursorline
 " For airlien plugin
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':.:t'
+let g:airline#extensions#gutentags#enabled = 1
 "" Show buffer number in list
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
@@ -186,6 +191,10 @@ let g:jedi#completions_command = "<leader>c"
 " YouCompleMe Configurations {{{
 let g:ycm_key_invoke_completion = '<C-K>'
 let g:ycm_confirm_extra_conf = 0
+nnoremap <leader>goto :YcmCompleter GoTo<CR>
+nnoremap <leader>gotoc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gotof :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gotoi :YcmCompleter GoToInclude<CR>
 " let g:syntastic_java_checkers = []
 " }}}
 com! -complete=custom,ListUserstwo -nargs=1 Sunjoo2 call Varg("<args>")
